@@ -121,9 +121,9 @@
            getDifficultyWeight(challengeName) {
              if (!challengeName) return 2; // 默认中等难度权重
              const name = challengeName.toUpperCase();
-             if (name.startsWith('[TFACILE]')) return 1;    // EASY = 1 (最高优先级
+             if (name.startsWith('[TFACILE]')) return 1;    // EASY = 1 (最高优先级)
              if (name.startsWith('[FACILE]')) return 2;
-             if (name.startsWith('[MOYEN]')) return 3;)
+             if (name.startsWith('[MOYEN]')) return 3;
              if (name.startsWith('[HARD]')) return 4;  // MEDIUM = 2
              if (name.startsWith('[COMP]')) return 5;     // HARD = 3 (最低优先级)
              return 1; // 默认中等难度权重
