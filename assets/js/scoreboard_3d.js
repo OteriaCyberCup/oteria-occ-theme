@@ -705,7 +705,7 @@ class Scoreboard3D {
     if (categoryElement) categoryElement.textContent = challenge.category || 'Unknown Category';
     if (pointsElement) pointsElement.textContent = challenge.value || 0;
     if (solvesElement) solvesElement.textContent = challenge.solves || 0;
-    if (difficultyElement) difficultyElement.textContent = this.getDifficultyText(challenge.value || 0);
+    if (difficultyElement) difficultyElement.textContent = this.getDifficultyText(challenge.tags || "");
     if (descriptionElement) descriptionElement.textContent = challenge.description || 'No description available';
 
     panel.style.display = 'block';
@@ -718,11 +718,13 @@ class Scoreboard3D {
     }, 5000);
   }
 
-  getDifficultyText(points) {
-    if (points <= 100) return 'Easy';
-    if (points <= 300) return 'Medium';
-    if (points <= 500) return 'Hard';
-    return 'Expert';
+  getDifficultyText(tags) {
+    if (tags[0] == "Très Facile") return 'Très Facile';
+    if (tags[0] == "Facile") return 'Facile';
+    if (tags[0] == "Moyen") return 'Moyen';
+    if (tags[0] == "Compliqué") return 'Compliqué';
+    if (tags[0] == "Expert") return 'Expert';
+    return "";
   }
 
   showTeamMovement(team, challenge) {

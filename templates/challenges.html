@@ -11,7 +11,7 @@
             {% trans %}Challenges{% endtrans %}
           </h1>
           <p class="lead mb-0 slide-up" style="animation-delay: 0.1s;">
-            {% trans %}Test your skills and solve challenging problems{% endtrans %}
+            {% trans %}Testez vos compétences et résolvez des problèmes !{% endtrans %}
           </p>
         </div>
       </div>
@@ -164,7 +164,7 @@
                   @click="selectedCategory = null"
                 >
                   <i class="fas fa-th-large me-2 text-primary"></i>
-                  {% trans %}All Categories{% endtrans %}
+                  {% trans %}Toutes catégories{% endtrans %}
                   <span class="badge bg-primary-subtle text-primary ms-auto" x-text="getTotalChallenges()"></span>
                 </button>
                 
@@ -222,7 +222,7 @@
                       <h4 class="mb-1 fw-bold" x-text="category"></h4>
                       <small class="text-muted">
                         <span x-text="getSortedChallenges(category).length"></span> {% trans %}challenges{% endtrans %}
-                        · <span x-text="getSortedChallenges(category).filter(c => c.solved_by_me).length"></span> {% trans %}solved{% endtrans %}
+                        · <span x-text="getSortedChallenges(category).filter(c => c.solved_by_me).length"></span> {% trans %}résolus{% endtrans %}
                       </small>
                     </div>
                   </div>
@@ -268,16 +268,28 @@
                           <div class="d-flex justify-content-between align-items-center mb-2">
                             <!-- Difficulty Indicator -->
                             <div class="difficulty-indicator">
-                              <template x-if="getDifficultyFromName(c.name) === 'easy'">
+                              <template x-if="getDifficultyFromName(c.name) === 'tresfacile'">
                                 <span class="badge bg-success-subtle text-success px-2 py-1 rounded-pill small">
                                   <i class="fas fa-seedling me-1"></i>
-                                  {% trans %}Easy{% endtrans %}
+                                  {% trans %}Très Facile{% endtrans %}
                                 </span>
                               </template>
-                              <template x-if="getDifficultyFromName(c.name) === 'medium'">
+                              <template x-if="getDifficultyFromName(c.name) === 'facile'">
+                                <span class="badge bg-success-subtle text-success px-2 py-1 rounded-pill small">
+                                  <i class="fas fa-seedling me-1"></i>
+                                  {% trans %}Facile{% endtrans %}
+                                </span>
+                              </template>
+                              <template x-if="getDifficultyFromName(c.name) === 'moyen'">
                                 <span class="badge bg-warning-subtle text-warning px-2 py-1 rounded-pill small">
                                   <i class="fas fa-fire me-1"></i>
-                                  {% trans %}Medium{% endtrans %}
+                                  {% trans %}Moyen{% endtrans %}
+                                </span>
+                              </template>
+                              <template x-if="getDifficultyFromName(c.name) === 'complique'">
+                                <span class="badge bg-danger-subtle text-danger px-2 py-1 rounded-pill small">
+                                  <i class="fas fa-skull me-1"></i>
+                                  {% trans %}Compliqué{% endtrans %}
                                 </span>
                               </template>
                               <template x-if="getDifficultyFromName(c.name) === 'hard'">
@@ -309,10 +321,10 @@
                             type="button"
                           >
                             <template x-if="!c.solved_by_me">
-                              <span><i class="fas fa-play me-1"></i>{% trans %}Start{% endtrans %}</span>
+                              <span><i class="fas fa-play me-1"></i>{% trans %}Commencé{% endtrans %}</span>
                             </template>
                             <template x-if="c.solved_by_me">
-                              <span><i class="fas fa-check me-1"></i>{% trans %}Solved{% endtrans %}</span>
+                              <span><i class="fas fa-check me-1"></i>{% trans %}Résolus{% endtrans %}</span>
                             </template>
                           </button>
                         </div>
@@ -333,7 +345,7 @@
             <div class="card border-0 shadow-sm rounded-3 mb-3" x-data="UserStats" x-init="loadUserStats()">
               <div class="card-header text-center py-3 user-header">
                 <h6 class="mb-1 fw-bold">{{ User.name }}</h6>
-                <small class="opacity-75">{% trans %}Competitor{% endtrans %}</small>
+                <small class="opacity-75">{% trans %}Compétiteur{% endtrans %}</small>
               </div>
             <div class="card-body p-3">
               <div class="row g-3 text-center">
@@ -346,13 +358,13 @@
                 <div class="col-4">
                   <div class="stat-item">
                     <div class="stat-number fw-bold text-success" x-text="solvedCount || 0">0</div>
-                    <div class="stat-label small text-muted">{% trans %}Solved{% endtrans %}</div>
+                    <div class="stat-label small text-muted">{% trans %}Résolus{% endtrans %}</div>
                   </div>
                 </div>
                 <div class="col-4">
                   <div class="stat-item">
                     <div class="stat-number fw-bold text-warning" x-text="userRank || '#{{ User.place or '-' }}'">#{{ User.place or '-' }}</div>
-                    <div class="stat-label small text-muted">{% trans %}Rank{% endtrans %}</div>
+                    <div class="stat-label small text-muted">{% trans %}Rang{% endtrans %}</div>
                   </div>
                 </div>
               </div>
@@ -360,7 +372,7 @@
               <!-- Progress Bar -->
               <div class="mt-3">
                 <div class="d-flex justify-content-between align-items-center mb-1">
-                  <small class="text-muted">{% trans %}Progress{% endtrans %}</small>
+                  <small class="text-muted">{% trans %}Progression{% endtrans %}</small>
                   <small class="text-muted">
                     <span x-text="solvedCount || 0">0</span> / <span x-text="totalChallenges || 0">0</span>
                   </small>
@@ -396,7 +408,7 @@
                   type="button"
                 >
                   <i class="fas fa-activity me-1"></i>
-                  {% trans %}Activity{% endtrans %}
+                  {% trans %}Activité{% endtrans %}
                 </button>
               </nav>
             </div>
@@ -406,7 +418,7 @@
               <div x-show="activeTab === 'notifications'" x-transition>
                 <div x-show="notifications.length === 0" class="text-center text-muted py-3">
                   <i class="fas fa-bell-slash mb-2" style="font-size: 2rem; opacity: 0.3;"></i>
-                  <p class="mb-0 small">{% trans %}No notifications yet{% endtrans %}</p>
+                  <p class="mb-0 small">{% trans %}Aucune notifications{% endtrans %}</p>
                 </div>
                 
                 <div x-show="notifications.length > 0">
@@ -426,7 +438,7 @@
                   <div class="text-center mt-3">
                     <a href="{{ url_for('views.notifications') }}" class="btn btn-outline-primary btn-sm rounded-pill" @click="markAllNotificationsAsRead()">
                       <i class="fas fa-bell me-1"></i>
-                      {% trans %}View All{% endtrans %}
+                      {% trans %}Voir tout{% endtrans %}
                     </a>
                   </div>
                 </div>
@@ -436,7 +448,7 @@
               <div x-show="activeTab === 'activity'" x-transition>
                 <div x-show="recentSolves.length === 0" class="text-center text-muted py-3">
                   <i class="fas fa-chart-line mb-2" style="font-size: 2rem; opacity: 0.3;"></i>
-                  <p class="mb-0 small">{% trans %}No recent activity{% endtrans %}</p>
+                  <p class="mb-0 small">{% trans %}Aucune activité{% endtrans %}</p>
                 </div>
                 
                 <div x-show="recentSolves.length > 0">
@@ -448,7 +460,7 @@
                       <div class="activity-content flex-grow-1">
                         <div class="activity-user small fw-semibold" x-text="solve.user"></div>
                         <div class="activity-challenge small text-muted">
-                          {% trans %}solved{% endtrans %} <span x-text="solve.challenge"></span>
+                          {% trans %}résolus{% endtrans %} <span x-text="solve.challenge"></span>
                         </div>
                         <div class="activity-time small text-muted" x-text="formatTime(solve.date)"></div>
                       </div>
@@ -461,7 +473,7 @@
                   <div class="text-center mt-3">
                     <a href="{{ url_for('scoreboard.listing') }}" class="btn btn-outline-success btn-sm rounded-pill">
                       <i class="fas fa-chart-line me-1"></i>
-                      {% trans %}View Scoreboard{% endtrans %}
+                      {% trans %}Voir Scoreboard{% endtrans %}
                     </a>
                   </div>
                 </div>
