@@ -11,7 +11,7 @@
             {% trans %}Challenges{% endtrans %}
           </h1>
           <p class="lead mb-0 slide-up" style="animation-delay: 0.1s;">
-            {% trans %}Testez vos compétences et résolvez des problèmes !{% endtrans %}
+            {% trans %}Testez vos compétences et résolvez des challenges !{% endtrans %}
           </p>
         </div>
       </div>
@@ -264,7 +264,7 @@
                             </span>
                             <span class="badge bg-light text-muted px-2 py-1 rounded-pill small">
                               <i class="fas fa-users me-1"></i>
-                              <span x-text="c.solves || 0"></span> {% trans %}solved{% endtrans %}
+                              <span x-text="c.solves || 0"></span> {% trans %}résolus{% endtrans %}
                             </span>
                           </div>
 
@@ -452,7 +452,7 @@
               <div x-show="activeTab === 'activity'" x-transition>
                 <div x-show="recentSolves.length === 0" class="text-center text-muted py-3">
                   <i class="fas fa-chart-line mb-2" style="font-size: 2rem; opacity: 0.3;"></i>
-                  <p class="mb-0 small">{% trans %}Aucune activité{% endtrans %}</p>
+                  <p class="mb-0 small">{% trans %}Aucune activités{% endtrans %}</p>
                 </div>
                 
                 <div x-show="recentSolves.length > 0">
