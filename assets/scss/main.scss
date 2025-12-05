@@ -1,3 +1,4 @@
+// Import Bootstrap with custom variables (must be first for @use rules)
 @use "bootstrap/scss/bootstrap" as * with (
   // Application de ta palette ici pour Bootstrap
   $primary: #FF2C65,    // Ton Rose (Action principale)
