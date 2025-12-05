@@ -1,22 +1,20 @@
 // Import Bootstrap with custom variables (must be first for @use rules)
 @use "bootstrap/scss/bootstrap" as * with (
-  // Application de ta palette ici pour Bootstrap
-  $primary: #FF2C65,    // Ton Rose (Action principale)
-  $secondary: #F6F6F6,  // Ton Blanc cassé (Secondaire)
-  $success: #32D74B,    // Vert ajusté pour le contraste sombre
-  $danger: #FF453A,     // Rouge ajusté
-  $warning: #FF9F0A,    // Orange ajusté
-  $info: #FF2C65,       // On aligne l'info sur le primaire
-  $dark: #040117,       // Ta couleur principale sombre
-  $light: #F6F6F6,      // Ton blanc cassé
-  
+  $primary: #007AFF,
+  $secondary: #5856D6,
+  $success: #34C759,
+  $danger: #FF3B30,
+  $warning: #FF9500,
+  $info: #007AFF,
+  $dark: #1C1C1E,
+  $light: #F2F2F7,
   $font-family-sans-serif: (-apple-system, "SF Pro Display", "Inter", system-ui, sans-serif),
   $font-size-base: 1rem,
   $line-height-base: 1.5,
   $border-radius: 0.75rem,
   $border-radius-lg: 1rem,
-  $box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), // Ombres plus fortes pour le sombre
-  $box-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5)
+  $box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12),
+  $box-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16)
 );
 
 // Import existing components
@@ -51,49 +49,49 @@
 
 // WMCTF Custom Variables
 :root {
-  // Brand Colors (Basé sur ta demande)
-  --wmctf-primary: #FF2C65;    /* Principale : Rose */
-  --wmctf-secondary: #F6F6F6;  /* Secondaire : Blanc cassé */
-  --wmctf-accent: #FFFFFF;     /* Accent : Blanc pur */
+  // WMCTF Brand Colors
+  --wmctf-primary: #007AFF;
+  --wmctf-secondary: #5856D6;
+  --wmctf-accent: #FF3B30;
+  --wmctf-success: #34C759;
+  --wmctf-warning: #FF9500;
   
-  // Couleurs d'état (Ajustées pour être lisibles sur fond #040117)
-  --wmctf-success: #32D74B;
-  --wmctf-warning: #FF9F0A;
+  // Dark mode colors
+  --dark-bg: #000000;
+  --dark-surface: #1C1C1E;
+  --dark-card: #2C2C2E;
+  --dark-border: #38383A;
+  --dark-text: #FFFFFF;
+  --dark-muted: #8E8E93;
   
-  // --- CONFIGURATION DARK MODE (Basé sur #040117) ---
-  --dark-bg: #040117;          /* Ta couleur de fond principale */
-  --dark-surface: #0c0821;     /* Légèrement plus clair pour header/footer */
-  --dark-card: #151030;        /* Encore plus clair pour les cartes */
-  --dark-border: #2a2252;      /* Bordures subtiles violettes/sombres */
-  --dark-text: #FFFFFF;        /* Ton blanc pur */
-  --dark-muted: #9ca3af;       /* Gris pour le texte secondaire */
-  
-  // --- CONFIGURATION LIGHT MODE (Optionnel, au cas où) ---
-  --light-bg: #F6F6F6;         /* Ton blanc cassé */
-  --light-surface: #FFFFFF;
+  // Light mode colors
+  --light-bg: #FFFFFF;
+  --light-surface: #F2F2F7;
   --light-card: #FFFFFF;
-  --light-border: #e5e7eb;
-  --light-text: #040117;       /* Texte sombre (ta couleur principale) */
-  --light-muted: #6b7280;
+  --light-border: #C6C6C8;
+  --light-text: #000000;
+  --light-muted: #6D6D70;
   
-  // Apple-style spacing & radius (inchangé)
+  // Apple-style spacing
   --spacing-xs: 0.5rem;
   --spacing-sm: 0.75rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
+  
+  // Apple-style border radius
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
   --radius-2xl: 2rem;
   
-  // Shadows (Ajustées pour le contraste)
-  --shadow-sm: 0 2px 8px rgba(4, 1, 23, 0.5);
-  --shadow-md: 0 4px 16px rgba(4, 1, 23, 0.6);
-  --shadow-lg: 0 8px 32px rgba(4, 1, 23, 0.7);
-  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.8);
+  // Apple-style shadows
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.2);
 }
 
 // Global styles with Apple Design principles
