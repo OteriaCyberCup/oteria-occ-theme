@@ -1,11 +1,11 @@
 // Import Bootstrap with custom variables (must be first for @use rules)
 @use "bootstrap/scss/bootstrap" as * with (
-  $primary: #007AFF,
-  $secondary: #5856D6,
-  $success: #34C759,
-  $danger: #FF3B30,
-  $warning: #FF9500,
-  $info: #007AFF,
+  $primary: #FF2C65,
+  $secondary: #F6F6F6,
+  $success: #32D74B,
+  $danger: #FF453A,
+  $warning: #FF9F0A,
+  $info: #FF2C65,
   $dark: #1C1C1E,
   $light: #F2F2F7,
   $font-family-sans-serif: (-apple-system, "SF Pro Display", "Inter", system-ui, sans-serif),
